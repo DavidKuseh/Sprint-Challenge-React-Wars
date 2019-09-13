@@ -2,6 +2,31 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './App.css';
 import Characters from "./components/Characters";
+import styled from "styled-components";
+
+//Styles
+const ReactWarsHeader = styled.h1`
+  color: red;
+`
+const PeopleStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+.character{
+  background-color: #392061;
+  width: 400px;
+  margin-bottom: 60px;
+  margin-left: 40px;
+  margin-right: 30px;
+  border-radius: 50px;
+  color: white;
+
+  h3{
+    color: black;
+    text-decoration-style: underline;
+  }
+}
+`
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -27,10 +52,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <ReactWarsHeader className="Header">React Wars</ReactWarsHeader>
+      <PeopleStyle className = "character">
       {
           people.map(person => <Characters props={person} key={person.url}/>)
       }
+      </PeopleStyle>
     </div>
   );
 }
