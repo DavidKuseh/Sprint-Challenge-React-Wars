@@ -1,20 +1,14 @@
 import React from "react";
 
 
-function Characters ({name, height, mass, birthYear}) {
+function Characters ({props}) {
     return (
-        <>
         <div>
-            {
-                // people.results.map(() => {
-                //     name={name}
-                //     height={height}
-                //     mass={mass}
-                //     birthYear={birthYear}
-                // })
-            }
+            <h3>Character: {props.name}</h3>
+            <p>Height: {props.height}</p>
+            <p>Mass: {props.mass}</p>
+            <p>Birth Year: {props.birth_year}</p>
         </div>
-        </> 
     )
 }
 

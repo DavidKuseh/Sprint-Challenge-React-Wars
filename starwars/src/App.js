@@ -29,11 +29,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       {
-           
-            // results.name.map(()=> {
-            //     <Characters ></Characters>
-            // })
-         
+          people.map(person => <Characters props={person} key={person.url}/>)
       }
     </div>
   );
